@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 android {
     namespace "com.example.example"
     compileSdkVersion 35
+    ndkVersion "27.0.12077973"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -48,6 +49,13 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_23
+        targetCompatibility = JavaVersion.VERSION_23
+    }
+    kotlinOptions {
+        jvmTarget = '23'
     }
 }
 
