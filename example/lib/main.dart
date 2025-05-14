@@ -162,9 +162,9 @@ class _MyAppState extends State<MyApp> {
               padding: const EdgeInsets.all(8),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith(
+                  backgroundColor: WidgetStateProperty.resolveWith(
                       (states) => Theme.of(context).colorScheme.secondary),
-                  padding: MaterialStateProperty.resolveWith(
+                  padding: WidgetStateProperty.resolveWith(
                       (states) => const EdgeInsets.symmetric(vertical: 16)),
                 ),
                 onPressed: () {
