@@ -18,7 +18,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
+// import io.flutter.plugin.common.PluginRegistry.Registrar
 
 
 class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -59,14 +59,14 @@ class FlutterSmsPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     mChannel.setMethodCallHandler(null)
   }
 
-  // V1 embedding entry point. This is deprecated and will be removed in a future Flutter
-  // release but we leave it here in case someone's app does not utilize the V2 embedding yet.
+  // // V1 embedding entry point. This is deprecated and will be removed in a future Flutter
+  // // release but we leave it here in case someone's app does not utilize the V2 embedding yet.
   companion object {
     @JvmStatic
-    fun registerWith(registrar: Registrar) {
+    fun registerWith(messenger: BinaryMessenger) {
       val inst = FlutterSmsPlugin()
-      inst.activity = registrar.activity()
-      inst.setupCallbackChannels(registrar.messenger())
+      // inst.activity = registrar.activity()
+      inst.setupCallbackChannels(messenger)
     }
   }
 
